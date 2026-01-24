@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UI Component Library Showcase</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header class="navbar">
+        <a href="#" class="navbar__brand">Vibe UI Library</a>
+        <nav>
+            <ul class="navbar__menu">
+                <li><a href="#buttons" class="navbar__link">Buttons</a></li>
+                <li><a href="#inputs" class="navbar__link">Inputs</a></li>
+                <li><a href="#cards" class="navbar__link">Cards</a></li>
+                <li><a href="#badges" class="navbar__link">Badges</a></li>
+                <li><a href="#alerts" class="navbar__link">Alerts</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="introduction">
+            <h2>Welcome</h2>
+            <p>A collection of semantic, accessible, and reusable UI components.</p>
+        </section>
+
+        <section id="buttons">
+            <h2>Buttons</h2>
+            <button type="button" class="btn btn--primary">Primary Button</button>
+            <button type="button" class="btn btn--secondary">Secondary Button</button>
+            <button type="button" class="btn btn--primary" disabled>Disabled Button</button>
+        </section>
+
+        <section id="inputs">
+            <h2>Form Inputs</h2>
+            <form>
+                <label for="username" class="form-label">Username</label>
+                <input type="text" id="username" name="username" class="form-input" placeholder="Enter username">
+
+                <label for="email" class="form-label">Email (Error State Demo)</label>
+                <input type="email" id="email" name="email" class="form-input form-input--error"
+                    placeholder="Enter email" value="invalid-email">
+
+                <label for="subscribe" class="form-checkbox-label">
+                    <input type="checkbox" id="subscribe" name="subscribe">
+                    Subscribe to newsletter
+                </label>
+            </form>
+        </section>
+
+        <section id="cards">
+            <h2>Cards</h2>
+            <article class="card">
+                <h3 class="card__title">Card Title</h3>
+                <p class="card__body">This is a sample card component content. It demonstrates how text flows within the
+                    container.</p>
+                <div class="card__footer">
+                    <a href="#" class="btn btn--primary">Read more</a>
+                </div>
+            </article>
+            <article class="card">
+                <h3 class="card__title">Another Card</h3>
+                <p class="card__body">Description for the second card goes here. Cards are great for grid layouts.</p>
+                <div class="card__footer">
+                    <a href="#" class="btn btn--secondary">Action</a>
+                </div>
+            </article>
+        </section>
+
+        <section id="badges">
+            <h2>Badges</h2>
+            <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+                <span class="badge">Default</span>
+                <span class="badge badge--primary">Primary</span>
+                <span class="badge badge--success">Success</span>
+                <span class="badge badge--warning">Warning</span>
+                <span class="badge badge--error">Error</span>
+            </div>
+        </section>
+
+        <section id="alerts">
+            <h2>Alerts</h2>
+            <div class="alert alert--info" role="alert">
+                <strong>Info:</strong> This is an informational alert.
+            </div>
+            <div class="alert alert--success" role="alert">
+                <strong>Success:</strong> Operation completed successfully.
+            </div>
+            <div class="alert alert--warning" role="alert">
+                <strong>Warning:</strong> Please check your input.
+            </div>
+            <div class="alert alert--error" role="alert">
+                <strong>Error:</strong> Something went wrong.
+            </div>
+        </section>
+        <section id="modal-demo">
+            <h2>Modal</h2>
+            <!-- Trigger -->
+            <a href="#demo-modal" class="btn btn--primary">Open Demo Modal</a>
+
+            <!-- Modal Structure -->
+            <div id="demo-modal" class="modal-overlay class=modal">
+                <div class="modal__content">
+                    <div class="modal__header">
+                        <h3 class="modal__title">Confirm Action</h3>
+                        <a href="#" class="modal__close">&times;</a>
+                    </div>
+                    <div class="modal__body">
+                        <p>Are you sure you want to proceed with this action? This can be undone if you try hard enough.
+                        </p>
+                    </div>
+                    <div class="modal__footer">
+                        <a href="#" class="btn btn--secondary">Cancel</a>
+                        <a href="#" class="btn btn--primary">Confirm</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Vibe UI Library. All rights reserved.</p>
+        <nav>
+            <ul>
+                <li><a href="#">GitHub</a></li>
+                <li><a href="#">Documentation</a></li>
+            </ul>
+        </nav>
+    </footer>
+</body>
+
+</html>
