@@ -25,97 +25,637 @@
     <main>
         <section id="introduction">
             <h2>Welcome</h2>
-            <p>A collection of semantic, accessible, and reusable UI components.</p>
+            <p>A collection of semantic, accessible, and reusable UI components. This library builds on a dark-themed,
+                atomic design system focused on simplicity and accessibility.</p>
         </section>
 
         <section id="buttons">
-            <h2>Buttons</h2>
-            <button type="button" class="btn btn--primary">Primary Button</button>
-            <button type="button" class="btn btn--secondary">Secondary Button</button>
-            <button type="button" class="btn btn--primary" disabled>Disabled Button</button>
+            <div class="doc-card">
+                <div class="doc-card__header">
+                    <h2 class="doc-card__title">Buttons</h2>
+                    <p class="doc-card__subtitle">Buttons trigger actions or navigation. Use them for form submissions,
+                        dialog confirmations, or simple links styled as buttons.</p>
+                </div>
+
+                <!-- Tabs Container -->
+                <div class="tabs tabs__group">
+                    <!-- Radio Inputs -->
+                    <input type="radio" name="tabs-btn" id="tab-preview-1" checked>
+                    <input type="radio" name="tabs-btn" id="tab-code-1">
+                    <input type="radio" name="tabs-btn" id="tab-notes-1">
+
+                    <!-- Nav Labels -->
+                    <div class="tabs__nav">
+                        <label for="tab-preview-1" class="tabs__label">Preview</label>
+                        <label for="tab-code-1" class="tabs__label">Code</label>
+                        <label for="tab-notes-1" class="tabs__label">Instructions</label>
+                    </div>
+
+                    <!-- Content -->
+                    <div class="tabs__content content-preview">
+                        <button type="button" class="btn btn--primary">Primary Button</button>
+                        <button type="button" class="btn btn--secondary">Secondary Button</button>
+                        <button type="button" class="btn btn--primary" disabled>Disabled Button</button>
+                    </div>
+
+                    <div class="tabs__content content-code">
+                        <div class="tabs tabs__group sub-tabs">
+                            <!-- Nested Inputs -->
+                            <input type="radio" name="code-btn" id="code-html-1" checked>
+                            <input type="radio" name="code-btn" id="code-css-1">
+
+                            <!-- Nested Nav -->
+                            <div class="tabs__nav">
+                                <label for="code-html-1" class="tabs__label">HTML</label>
+                                <label for="code-css-1" class="tabs__label">CSS</label>
+                            </div>
+
+                            <div class="sub-tabs__content content-html">
+                                <pre class="code-block"><code>&lt;!-- Primary Button --&gt;
+&lt;button type="button" class="btn btn--primary"&gt;Primary Button&lt;/button&gt;
+
+&lt;!-- Secondary Button --&gt;
+&lt;button type="button" class="btn btn--secondary"&gt;Secondary Button&lt;/button&gt;
+
+&lt;!-- Disabled Button --&gt;
+&lt;button type="button" class="btn btn--primary" disabled&gt;Disabled Button&lt;/button&gt;</code></pre>
+                            </div>
+                            <div class="sub-tabs__content content-css">
+                                <pre class="code-block"><code>/* Button Component */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-2) var(--space-4);
+  border-radius: var(--radius-md);
+  /* ... */
+}
+/* ... styles ... */</code></pre>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tabs__content content-notes">
+                        <p><strong>Available Modifiers:</strong></p>
+                        <ul>
+                            <li><code>.btn--primary</code>: For the main action on a screen.</li>
+                            <li><code>.btn--secondary</code>: For alternative actions.</li>
+                            <li><code>disabled</code> attribute: To prevent interaction.</li>
+                        </ul>
+                        <p><strong>Accessibility:</strong></p>
+                        <ul>
+                            <li>Use <code>&lt;button&gt;</code> for actions.</li>
+                            <li>Icon-only buttons require <code>aria-label</code>.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
         </section>
 
         <section id="inputs">
-            <h2>Form Inputs</h2>
-            <form>
-                <label for="username" class="form-label">Username</label>
-                <input type="text" id="username" name="username" class="form-input" placeholder="Enter username">
+            <div class="doc-card">
+                <div class="doc-card__header">
+                    <h2 class="doc-card__title">Form Inputs</h2>
+                    <p class="doc-card__subtitle">Inputs allow users to enter data. They include built-in labels and
+                        support validation states.</p>
+                </div>
 
-                <label for="email" class="form-label">Email (Error State Demo)</label>
-                <input type="email" id="email" name="email" class="form-input form-input--error"
-                    placeholder="Enter email" value="invalid-email">
+                <div class="tabs tabs__group">
+                    <!-- Inputs -->
+                    <input type="radio" name="tabs-input" id="tab-preview-input" checked>
+                    <input type="radio" name="tabs-input" id="tab-code-input">
+                    <input type="radio" name="tabs-input" id="tab-notes-input">
 
-                <label for="subscribe" class="form-checkbox-label">
-                    <input type="checkbox" id="subscribe" name="subscribe">
-                    Subscribe to newsletter
-                </label>
-            </form>
+                    <!-- Nav -->
+                    <div class="tabs__nav">
+                        <label for="tab-preview-input" class="tabs__label">Preview</label>
+                        <label for="tab-code-input" class="tabs__label">Code</label>
+                        <label for="tab-notes-input" class="tabs__label">Instructions</label>
+                    </div>
+
+                    <div class="tabs__content content-preview">
+                        <form>
+                            <label for="username" class="form-label">Username</label>
+                            <input type="text" id="username" name="username" class="form-input"
+                                placeholder="Enter username">
+                            <br>
+                            <label for="email" class="form-label">Email (Error State Demo)</label>
+                            <input type="email" id="email" name="email" class="form-input form-input--error"
+                                placeholder="Enter email" value="invalid-email">
+                            <br>
+                            <label for="subscribe" class="form-checkbox-label">
+                                <input type="checkbox" id="subscribe" name="subscribe">
+                                Subscribe to newsletter
+                            </label>
+                        </form>
+                    </div>
+
+                    <div class="tabs__content content-code">
+                        <div class="tabs tabs__group sub-tabs">
+                            <input type="radio" name="code-input" id="code-html-input" checked>
+                            <input type="radio" name="code-input" id="code-css-input">
+
+                            <div class="tabs__nav">
+                                <label for="code-html-input" class="tabs__label">HTML</label>
+                                <label for="code-css-input" class="tabs__label">CSS</label>
+                            </div>
+
+                            <div class="sub-tabs__content content-html">
+                                <pre class="code-block"><code>&lt;!-- Text Input --&gt;
+&lt;div&gt;
+  &lt;label for="username" class="form-label"&gt;Username&lt;/label&gt;
+  &lt;input type="text" id="username" class="form-input" placeholder="Enter username"&gt;
+&lt;/div&gt;
+
+&lt;!-- Error State --&gt;
+&lt;div&gt;
+  &lt;label for="email" class="form-label"&gt;Email&lt;/label&gt;
+  &lt;input type="email" id="email" class="form-input form-input--error" value="invalid"&gt;
+&lt;/div&gt;
+
+&lt;!-- Checkbox --&gt;
+&lt;label for="subscribe" class="form-checkbox-label"&gt;
+  &lt;input type="checkbox" id="subscribe"&gt;
+  Subscribe to newsletter
+&lt;/label&gt;</code></pre>
+                            </div>
+                            <div class="sub-tabs__content content-css">
+                                <pre class="code-block"><code>/* Input Component */
+.form-label {
+  display: block;
+  font-size: var(--font-size-sm);
+  margin-bottom: var(--space-2);
+}
+
+.form-input {
+  display: block;
+  width: 100%;
+  padding: var(--space-2) var(--space-3);
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  transition: all var(--transition-base);
+}
+
+.form-input:focus {
+  border-color: var(--color-primary);
+  box-shadow: var(--shadow-focus);
+}
+
+.form-input--error {
+  border-color: var(--color-error);
+}
+
+.form-checkbox-label {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  cursor: pointer;
+}</code></pre>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tabs__content content-notes">
+                        <p><strong>Available Modifiers:</strong></p>
+                        <ul>
+                            <li><code>.form-input--error</code>: Highlights the border in red to indicate validation
+                                errors.
+                            </li>
+                            <li><code>.form-checkbox-label</code>: A wrapper to correctly align checkboxes with their
+                                labels.</li>
+                        </ul>
+                        <p><strong>Accessibility:</strong></p>
+                        <ul>
+                            <li>Always pair <code>&lt;label&gt;</code> with <code>&lt;input&gt;</code> using
+                                <code>for</code>/<code>id</code>.
+                            </li>
+                            <li>Add <code>aria-invalid="true"</code> for error states.</li>
+                            <li>Use <code>aria-describedby</code> to link error text to inputs.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
         </section>
 
         <section id="cards">
-            <h2>Cards</h2>
-            <article class="card">
-                <h3 class="card__title">Card Title</h3>
-                <p class="card__body">This is a sample card component content. It demonstrates how text flows within the
-                    container.</p>
-                <div class="card__footer">
-                    <a href="#" class="btn btn--primary">Read more</a>
+            <div class="doc-card">
+                <div class="doc-card__header">
+                    <h2 class="doc-card__title">Cards</h2>
+                    <p class="doc-card__subtitle">Cards are flexible containers for grouping related content, such as
+                        blog posts, product details, or dashboard widgets.</p>
                 </div>
-            </article>
-            <article class="card">
-                <h3 class="card__title">Another Card</h3>
-                <p class="card__body">Description for the second card goes here. Cards are great for grid layouts.</p>
-                <div class="card__footer">
-                    <a href="#" class="btn btn--secondary">Action</a>
+
+                <div class="tabs tabs__group">
+                    <!-- Inputs -->
+                    <input type="radio" name="tabs-card" id="tab-preview-card" checked>
+                    <input type="radio" name="tabs-card" id="tab-code-card">
+                    <input type="radio" name="tabs-card" id="tab-notes-card">
+
+                    <!-- Nav -->
+                    <div class="tabs__nav">
+                        <label for="tab-preview-card" class="tabs__label">Preview</label>
+                        <label for="tab-code-card" class="tabs__label">Code</label>
+                        <label for="tab-notes-card" class="tabs__label">Instructions</label>
+                    </div>
+
+                    <div class="tabs__content content-preview">
+                        <article class="card">
+                            <h3 class="card__title">Card Title</h3>
+                            <p class="card__body">This is a sample card component content. It demonstrates how text
+                                flows within the container.</p>
+                            <div class="card__footer">
+                                <a href="#" class="btn btn--primary">Read more</a>
+                            </div>
+                        </article>
+                        <article class="card" style="margin-top: 1rem;">
+                            <h3 class="card__title">Another Card</h3>
+                            <p class="card__body">Description for the second card goes here. Cards are great for grid
+                                layouts.</p>
+                            <div class="card__footer">
+                                <a href="#" class="btn btn--secondary">Action</a>
+                            </div>
+                        </article>
+                    </div>
+
+                    <div class="tabs__content content-code">
+                        <div class="tabs tabs__group sub-tabs">
+                            <input type="radio" name="code-card" id="code-html-card" checked>
+                            <input type="radio" name="code-card" id="code-css-card">
+
+                            <div class="tabs__nav">
+                                <label for="code-html-card" class="tabs__label">HTML</label>
+                                <label for="code-css-card" class="tabs__label">CSS</label>
+                            </div>
+
+                            <div class="sub-tabs__content content-html">
+                                <pre class="code-block"><code>&lt;article class="card"&gt;
+  &lt;h3 class="card__title"&gt;Card Title&lt;/h3&gt;
+  &lt;p class="card__body"&gt;
+    This is a sample card component content.
+  &lt;/p&gt;
+  &lt;div class="card__footer"&gt;
+    &lt;a href="#" class="btn btn--primary"&gt;Read more&lt;/a&gt;
+  &lt;/div&gt;
+&lt;/article&gt;</code></pre>
+                            </div>
+                            <div class="sub-tabs__content content-css">
+                                <pre class="code-block"><code>/* Card Component */
+.card {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-6);
+  display: flex;
+  flex-direction: column;
+  transition: transform var(--transition-base), box-shadow var(--transition-base);
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+
+.card__body {
+  color: var(--color-text-muted);
+  flex-grow: 1; /* Pushes footer to bottom */
+}
+
+.card__footer {
+  margin-top: auto;
+  display: flex;
+  gap: var(--space-4);
+}</code></pre>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tabs__content content-notes">
+                        <p><strong>Structure:</strong></p>
+                        <ul>
+                            <li><code>.card</code>: The main container.</li>
+                            <li><code>.card__title</code>: The heading area.</li>
+                            <li><code>.card__body</code>: The main content area (stretches to fill space).</li>
+                            <li><code>.card__footer</code>: The bottom area for actions.</li>
+                        </ul>
+                        <p><strong>Accessibility:</strong></p>
+                        <ul>
+                            <li>Use semantic tags like <code>&lt;article&gt;</code>.</li>
+                            <li>Ensure logical heading hierarchy within cards.</li>
+                        </ul>
+                    </div>
                 </div>
-            </article>
+            </div>
         </section>
 
         <section id="badges">
-            <h2>Badges</h2>
-            <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
-                <span class="badge">Default</span>
-                <span class="badge badge--primary">Primary</span>
-                <span class="badge badge--success">Success</span>
-                <span class="badge badge--warning">Warning</span>
-                <span class="badge badge--error">Error</span>
+            <div class="doc-card">
+                <div class="doc-card__header">
+                    <h2 class="doc-card__title">Badges</h2>
+                    <p class="doc-card__subtitle">Badges are compact elements used to display metadata, status, or tags.
+                        They are often found inside tables or cards.</p>
+                </div>
+
+                <div class="tabs tabs__group">
+                    <input type="radio" name="tabs-badge" id="tab-preview-badge" checked>
+                    <input type="radio" name="tabs-badge" id="tab-code-badge">
+                    <input type="radio" name="tabs-badge" id="tab-notes-badge">
+
+                    <div class="tabs__nav">
+                        <label for="tab-preview-badge" class="tabs__label">Preview</label>
+                        <label for="tab-code-badge" class="tabs__label">Code</label>
+                        <label for="tab-notes-badge" class="tabs__label">Instructions</label>
+                    </div>
+
+                    <div class="tabs__content content-preview">
+                        <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+                            <span class="badge">Default</span>
+                            <span class="badge badge--primary">Primary</span>
+                            <span class="badge badge--success">Success</span>
+                            <span class="badge badge--warning">Warning</span>
+                            <span class="badge badge--error">Error</span>
+                        </div>
+                    </div>
+
+                    <div class="tabs__content content-code">
+                        <div class="tabs tabs__group sub-tabs">
+                            <input type="radio" name="code-badge" id="code-html-badge" checked>
+                            <input type="radio" name="code-badge" id="code-css-badge">
+
+                            <div class="tabs__nav">
+                                <label for="code-html-badge" class="tabs__label">HTML</label>
+                                <label for="code-css-badge" class="tabs__label">CSS</label>
+                            </div>
+
+                            <div class="sub-tabs__content content-html">
+                                <pre class="code-block"><code>&lt;span class="badge"&gt;Default&lt;/span&gt;
+&lt;span class="badge badge--primary"&gt;Primary&lt;/span&gt;
+&lt;span class="badge badge--success"&gt;Success&lt;/span&gt;
+&lt;span class="badge badge--warning"&gt;Warning&lt;/span&gt;
+&lt;span class="badge badge--error"&gt;Error&lt;/span&gt;</code></pre>
+                            </div>
+                            <div class="sub-tabs__content content-css">
+                                <pre class="code-block"><code>/* Badge Component */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: var(--space-1) var(--space-2);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-medium);
+  border-radius: var(--radius-full);
+  background-color: var(--color-surface-hover);
+  color: var(--color-text-main);
+}
+
+.badge--primary {
+  background-color: var(--color-primary);
+  color: var(--color-text-inverse);
+}
+
+.badge--success { background-color: var(--color-success); }
+.badge--warning { background-color: var(--color-warning); }
+.badge--error { background-color: var(--color-error); }</code></pre>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tabs__content content-notes">
+                        <p><strong>Available Modifiers:</strong></p>
+                        <ul>
+                            <li><code>.badge--primary</code>: Standard brand color.</li>
+                            <li><code>.badge--success</code>: Green for positive status.</li>
+                            <li><code>.badge--warning</code>: Yellow for caution.</li>
+                            <li><code>.badge--error</code>: Red for critical status.</li>
+                        </ul>
+                        <p><strong>Accessibility:</strong></p>
+                        <ul>
+                            <li>Ensure sufficient text color contrast.</li>
+                            <li>If color alone conveys meaning, ensure text context is sufficient.</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </section>
 
         <section id="alerts">
-            <h2>Alerts</h2>
-            <div class="alert alert--info" role="alert">
-                <strong>Info:</strong> This is an informational alert.
-            </div>
-            <div class="alert alert--success" role="alert">
-                <strong>Success:</strong> Operation completed successfully.
-            </div>
-            <div class="alert alert--warning" role="alert">
-                <strong>Warning:</strong> Please check your input.
-            </div>
-            <div class="alert alert--error" role="alert">
-                <strong>Error:</strong> Something went wrong.
+            <div class="doc-card">
+                <div class="doc-card__header">
+                    <h2 class="doc-card__title">Alerts</h2>
+                    <p class="doc-card__subtitle">Alerts communicate important messages to the user. They use distinct
+                        left-border colors to indicate priority.</p>
+                </div>
+
+                <div class="tabs tabs__group">
+                    <input type="radio" name="tabs-alert" id="tab-preview-alert" checked>
+                    <input type="radio" name="tabs-alert" id="tab-code-alert">
+                    <input type="radio" name="tabs-alert" id="tab-notes-alert">
+
+                    <div class="tabs__nav">
+                        <label for="tab-preview-alert" class="tabs__label">Preview</label>
+                        <label for="tab-code-alert" class="tabs__label">Code</label>
+                        <label for="tab-notes-alert" class="tabs__label">Instructions</label>
+                    </div>
+
+                    <div class="tabs__content content-preview">
+                        <div class="alert alert--info" role="alert">
+                            <strong>Info:</strong> This is an informational alert.
+                        </div>
+                        <div class="alert alert--success" role="alert">
+                            <strong>Success:</strong> Operation completed successfully.
+                        </div>
+                        <div class="alert alert--warning" role="alert">
+                            <strong>Warning:</strong> Please check your input.
+                        </div>
+                        <div class="alert alert--error" role="alert">
+                            <strong>Error:</strong> Something went wrong.
+                        </div>
+                    </div>
+
+                    <div class="tabs__content content-code">
+                        <div class="tabs tabs__group sub-tabs">
+                            <input type="radio" name="code-alert" id="code-html-alert" checked>
+                            <input type="radio" name="code-alert" id="code-css-alert">
+
+                            <div class="tabs__nav">
+                                <label for="code-html-alert" class="tabs__label">HTML</label>
+                                <label for="code-css-alert" class="tabs__label">CSS</label>
+                            </div>
+
+                            <div class="sub-tabs__content content-html">
+                                <pre class="code-block"><code>&lt;!-- Info Alert --&gt;
+&lt;div class="alert alert--info" role="alert"&gt;
+  &lt;strong&gt;Info:&lt;/strong&gt; This is an informational alert.
+&lt;/div&gt;
+
+&lt;!-- Success Alert --&gt;
+&lt;div class="alert alert--success" role="alert"&gt;
+  &lt;strong&gt;Success:&lt;/strong&gt; Operation completed.
+&lt;/div&gt;
+
+&lt;!-- Error Alert --&gt;
+&lt;div class="alert alert--error" role="alert"&gt;
+  &lt;strong&gt;Error:&lt;/strong&gt; Something went wrong.
+&lt;/div&gt;</code></pre>
+                            </div>
+                            <div class="sub-tabs__content content-css">
+                                <pre class="code-block"><code>/* Alert Component */
+.alert {
+  padding: var(--space-4);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border);
+  border-left-width: 4px;
+  background-color: var(--color-surface);
+  color: var(--color-text-main);
+  margin-bottom: var(--space-4);
+}
+
+.alert--info { border-left-color: var(--color-primary); }
+.alert--success { border-left-color: var(--color-success); }
+.alert--warning { border-left-color: var(--color-warning); }
+.alert--error { border-left-color: var(--color-error); }</code></pre>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tabs__content content-notes">
+                        <p><strong>Available Modifiers:</strong></p>
+                        <ul>
+                            <li><code>.alert--info</code>: Blue for general information.</li>
+                            <li><code>.alert--success</code>: Green for success messages.</li>
+                            <li><code>.alert--warning</code>: Yellow for warnings.</li>
+                            <li><code>.alert--error</code>: Red for errors or critical failures.</li>
+                        </ul>
+                        <p><strong>Accessibility:</strong></p>
+                        <ul>
+                            <li>Use <code>role="alert"</code> (assertive) for immediate screen reader announcements.
+                            </li>
+                            <li>Use <code>role="status"</code> (polite) for passive updates.</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </section>
-        <section id="modal-demo">
-            <h2>Modal</h2>
-            <!-- Trigger -->
-            <a href="#demo-modal" class="btn btn--primary">Open Demo Modal</a>
 
-            <!-- Modal Structure -->
-            <div id="demo-modal" class="modal-overlay class=modal">
-                <div class="modal__content">
-                    <div class="modal__header">
-                        <h3 class="modal__title">Confirm Action</h3>
-                        <a href="#" class="modal__close">&times;</a>
+        <section id="modal-demo">
+            <div class="doc-card">
+                <div class="doc-card__header">
+                    <h2 class="doc-card__title">Modal</h2>
+                    <p class="doc-card__subtitle">Modals are dialog overlays that demand user attention. They disable
+                        interaction with the rest of the page until closed. This implementation uses CSS-only
+                        <code>:target</code> selectors.
+                    </p>
+                </div>
+
+                <div class="tabs tabs__group">
+                    <input type="radio" name="tabs-modal" id="tab-preview-modal" checked>
+                    <input type="radio" name="tabs-modal" id="tab-code-modal">
+                    <input type="radio" name="tabs-modal" id="tab-notes-modal">
+
+                    <div class="tabs__nav">
+                        <label for="tab-preview-modal" class="tabs__label">Preview</label>
+                        <label for="tab-code-modal" class="tabs__label">Code</label>
+                        <label for="tab-notes-modal" class="tabs__label">Instructions</label>
                     </div>
-                    <div class="modal__body">
-                        <p>Are you sure you want to proceed with this action? This can be undone if you try hard enough.
-                        </p>
+
+                    <div class="tabs__content content-preview">
+                        <!-- Trigger -->
+                        <a href="#demo-modal" class="btn btn--primary">Open Demo Modal</a>
+
+                        <!-- Modal Structure -->
+                        <div id="demo-modal" class="modal-overlay modal">
+                            <div class="modal__content">
+                                <div class="modal__header">
+                                    <h3 class="modal__title">Confirm Action</h3>
+                                    <a href="#" class="modal__close">&times;</a>
+                                </div>
+                                <div class="modal__body">
+                                    <p>Are you sure you want to proceed with this action? This can be undone if you try
+                                        hard enough.</p>
+                                </div>
+                                <div class="modal__footer">
+                                    <a href="#" class="btn btn--secondary">Cancel</a>
+                                    <a href="#" class="btn btn--primary">Confirm</a>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="modal__footer">
-                        <a href="#" class="btn btn--secondary">Cancel</a>
-                        <a href="#" class="btn btn--primary">Confirm</a>
+
+                    <div class="tabs__content content-code">
+                        <div class="tabs tabs__group sub-tabs">
+                            <input type="radio" name="code-modal" id="code-html-modal" checked>
+                            <input type="radio" name="code-modal" id="code-css-modal">
+
+                            <div class="tabs__nav">
+                                <label for="code-html-modal" class="tabs__label">HTML</label>
+                                <label for="code-css-modal" class="tabs__label">CSS</label>
+                            </div>
+
+                            <div class="sub-tabs__content content-html">
+                                <pre class="code-block"><code>&lt;!-- Trigger Button --&gt;
+&lt;a href="#demo-modal" class="btn btn--primary"&gt;Open Demo Modal&lt;/a&gt;
+
+&lt;!-- Modal Overlay &amp; Content --&gt;
+&lt;div id="demo-modal" class="modal-overlay modal"&gt;
+  &lt;div class="modal__content"&gt;
+    &lt;div class="modal__header"&gt;
+      &lt;h3 class="modal__title"&gt;Confirm Action&lt;/h3&gt;
+      &lt;a href="#" class="modal__close"&gt;&amp;times;&lt;/a&gt;
+    &lt;/div&gt;
+    &lt;div class="modal__body"&gt;
+      &lt;p&gt;Msg...&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;div class="modal__footer"&gt;
+      &lt;a href="#" class="btn btn--secondary"&gt;Cancel&lt;/a&gt;
+      &lt;a href="#" class="btn btn--primary"&gt;Confirm&lt;/a&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                            </div>
+                            <div class="sub-tabs__content content-css">
+                                <pre class="code-block"><code>/* Modal Component (CSS-Only) */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: var(--color-overlay);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--transition-base);
+}
+
+.modal:target {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.modal__content {
+  background-color: var(--color-surface);
+  border-radius: var(--radius-lg);
+  padding: var(--space-8);
+  width: 90%;
+  max-width: 500px;
+}</code></pre>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tabs__content content-notes">
+                        <p><strong>Structure:</strong></p>
+                        <ul>
+                            <li><code>.modal-overlay</code>, <code>.modal</code>: The full-screen background overlay.
+                            </li>
+                            <li><code>.modal__content</code>: The centered dialog box.</li>
+                            <li><code>.modal__close</code>: Standard close "X" button.</li>
+                        </ul>
+                        <p><strong>Accessibility Notes (CSS-Only Limit):</strong></p>
+                        <ul>
+                            <li>This demo lacks focus trapping and "Esc" key support (requires JS).</li>
+                            <li>For production: Add <code>role="dialog"</code> and <code>aria-modal="true"</code>.</li>
+                            <li>Ensure focus moves *into* the modal when opened and *back* to trigger when closed.</li>
+                        </ul>
                     </div>
                 </div>
             </div>
