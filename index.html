@@ -6,6 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>UI Component Library Showcase</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Outfit:wght@400;500;700;800&display=swap"
+        rel="stylesheet">
 </head>
 
 <body>
@@ -23,10 +28,14 @@
     </header>
 
     <main>
-        <section id="introduction">
-            <h2>Welcome</h2>
-            <p>A collection of semantic, accessible, and reusable UI components. This library builds on a dark-themed,
-                atomic design system focused on simplicity and accessibility.</p>
+        <section id="introduction" class="hero">
+            <h1 class="hero__title">UI Library</h1>
+            <p class="hero__description">A collection of semantic, accessible, and reusable UI components.
+                This library builds on a dark-themed, atomic design system focused on simplicity and accessibility.</p>
+            <div class="hero__actions">
+                <a href="#buttons" class="btn btn--primary">Get Started</a>
+                <a href="https://github.com/MavisBee/Component" class="btn btn--secondary">View on GitHub</a>
+            </div>
         </section>
 
         <section id="buttons">
@@ -260,22 +269,25 @@
                     </div>
 
                     <div class="tabs__content content-preview">
-                        <article class="card">
-                            <h3 class="card__title">Card Title</h3>
-                            <p class="card__body">This is a sample card component content. It demonstrates how text
-                                flows within the container.</p>
-                            <div class="card__footer">
-                                <a href="#" class="btn btn--primary">Read more</a>
-                            </div>
-                        </article>
-                        <article class="card" style="margin-top: 1rem;">
-                            <h3 class="card__title">Another Card</h3>
-                            <p class="card__body">Description for the second card goes here. Cards are great for grid
-                                layouts.</p>
-                            <div class="card__footer">
-                                <a href="#" class="btn btn--secondary">Action</a>
-                            </div>
-                        </article>
+                        <div class="card-grid">
+                            <article class="card">
+                                <h3 class="card__title">Card Title</h3>
+                                <p class="card__body">This is a sample card component content. It demonstrates how text
+                                    flows within the container.</p>
+                                <div class="card__footer">
+                                    <a href="#" class="btn btn--primary">Read more</a>
+                                </div>
+                            </article>
+                            <article class="card">
+                                <h3 class="card__title">Another Card</h3>
+                                <p class="card__body">Description for the second card goes here. Cards are great for
+                                    grid
+                                    layouts.</p>
+                                <div class="card__footer">
+                                    <a href="#" class="btn btn--secondary">Action</a>
+                                </div>
+                            </article>
+                        </div>
                     </div>
 
                     <div class="tabs__content content-code">
@@ -663,7 +675,7 @@
     </main>
 
     <footer>
-        <p>&copy; 2024 Vibe UI Library. All rights reserved.</p>
+        <p>&copy; 2026 Mavis UI Library. All rights reserved.</p>
         <nav>
             <ul>
                 <li><a href="#">GitHub</a></li>

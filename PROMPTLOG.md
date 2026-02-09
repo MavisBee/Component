@@ -79,4 +79,5 @@ Do not include JavaScript or interaction logic.
 **What i accepted from the AI**
 I accepted all output as it was in line with my needs.
 
-with proper styling of colors, typography, shadows and spaces coponents styling.
+**What i did**
+Using Antigrvity Browser Control i Iterated on website designs and implementations and refined the website better i edited the color variable and some css components styling.
