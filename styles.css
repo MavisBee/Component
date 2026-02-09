@@ -830,3 +830,101 @@ footer a:hover {
     flex-wrap: wrap;
     align-items: flex-start;
 }
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    :root {
+        --space-8: 1.5rem;
+        --space-12: 2rem;
+        --space-16: 3rem;
+        --font-size-3xl: 2rem;
+        --font-size-4xl: 2.5rem;
+    }
+
+    body {
+        padding: var(--space-4);
+    }
+
+    .navbar {
+        flex-direction: column;
+        padding: var(--space-4);
+        gap: var(--space-4);
+    }
+
+    .navbar__menu {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: var(--space-4);
+    }
+
+    .hero {
+        padding: var(--space-8) 0;
+    }
+
+    .hero__title {
+        font-size: var(--font-size-3xl);
+    }
+
+    .hero__actions {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .btn {
+        width: 100%;
+        max-width: 300px;
+    }
+
+    .tabs__nav {
+        overflow-x: auto;
+        white-space: nowrap;
+        padding-bottom: var(--space-2);
+        /* Scrollbar space */
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .tabs__label {
+        padding: var(--space-3);
+        flex-shrink: 0;
+    }
+
+    .doc-card__header {
+        padding: var(--space-4);
+    }
+
+    .doc-card__title {
+        font-size: var(--font-size-xl);
+    }
+
+    .modal__content {
+        width: 95%;
+        padding: var(--space-6);
+    }
+
+    .card-grid {
+        flex-direction: column;
+    }
+
+    .card {
+        max-width: none;
+        /* Full width on mobile */
+    }
+
+    footer {
+        flex-direction: column;
+        gap: var(--space-4);
+        text-align: center;
+    }
+}
+
+
+/* Fix for mobile text overflow */
+@media (max-width: 480px) {
+    .hero__title {
+        font-size: 2rem;
+    }
+
+    .form-input {
+        width: 100%;
+    }
+}
+
