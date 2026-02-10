@@ -13,7 +13,10 @@
     --color-surface-hover: rgba(31, 41, 55, 0.8);
     /* Gray 800 Glass */
 
-    --color-overlay: rgb(3 7 18 / 0.8);
+    --color-surface-hover: rgba(31, 41, 55, 0.8);
+    /* Gray 800 Glass */
+
+    --color-overlay: rgba(3, 7, 18, 0.8);
 
     --color-text-main: #f9fafb;
     --color-text-muted: #9ca3af;
@@ -95,7 +98,13 @@
 
     --color-btn-secondary-hover: rgba(255, 255, 255, 0.1);
 
+    --color-btn-secondary-hover: rgba(255, 255, 255, 0.1);
+
     --color-navbar-bg: rgba(17, 24, 39, 0.6);
+    --color-modal-bg: rgba(30, 41, 59, 0.9);
+
+    --color-input-hover-bg: rgba(0, 0, 0, 0.3);
+    --color-input-focus-bg: rgba(0, 0, 0, 0.4);
 }
 
 [data-theme="light"] {
@@ -130,7 +139,14 @@
 
     --color-btn-secondary-hover: rgba(0, 0, 0, 0.1);
 
+    --color-btn-secondary-hover: rgba(0, 0, 0, 0.1);
+
     --color-navbar-bg: rgba(255, 255, 255, 0.8);
+    --color-modal-bg: rgba(255, 255, 255, 0.95);
+    --color-overlay: rgba(0, 0, 0, 0.4);
+
+    --color-input-hover-bg: #f9fafb;
+    --color-input-focus-bg: #ffffff;
 
     --shadow-glow: 0 0 20px rgba(79, 70, 229, 0.25);
 }
@@ -425,13 +441,13 @@ section {
 
 .form-input:hover {
     border-color: var(--color-text-muted);
-    background-color: rgba(0, 0, 0, 0.3);
+    background-color: var(--color-input-hover-bg);
 }
 
 .form-input:focus {
     border-color: var(--color-primary);
     box-shadow: var(--shadow-focus);
-    background-color: rgba(0, 0, 0, 0.4);
+    background-color: var(--color-input-focus-bg);
 }
 
 /* Input Variants */
@@ -650,14 +666,14 @@ input[type="checkbox"] {
 }
 
 .modal__content {
-    background-color: rgba(30, 41, 59, 0.9);
+    background-color: var(--color-modal-bg);
     /* High opacity surface */
     border: 1px solid var(--color-border);
     border-radius: var(--radius-xl);
     padding: var(--space-8);
     width: 90%;
     max-width: 500px;
-    box-shadow: var(--shadow-xl), 0 0 0 1px rgba(255, 255, 255, 0.05);
+    box-shadow: var(--shadow-xl);
     position: relative;
     transform: scale(0.95) translateY(10px);
     transition: transform var(--transition-bounce);
